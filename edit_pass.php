@@ -7,9 +7,6 @@ if($_SESSION['status']!="login"){
 }
 
 
-if ($_SESSION['role']!="admin"){
-    header("location:index.php");
-}
 include("config.php");
 
 $id = $_GET['id'];
@@ -19,7 +16,7 @@ $showuser = mysqli_fetch_array($resultuser);
 
 if (isset($_POST['submit_post'])) {
     if ($_POST["password"] == $_POST["confpassword"]) {
-        $id = $_GET[id];
+        $id = $_SESSION['id'];
         $pass = $_POST['password'];
 
         $perintah = $db->query("UPDATE user SET password ='$pass' WHERE id='$id'");
@@ -112,7 +109,7 @@ if (isset($_POST['submit_post'])) {
 
                             <input class="form-control input-sm" type="password" name="password" placeholder="New Password" required  >
                             <br>
-                            <input class="form-control input-sm" type="password" name="confpassword" placeholder="Confirm New Password" required  >
+                            <input class="form-control input-sm" type="password" name="confpassword" placeholder="Confirm New Password"  required  >
                             <br>
                             <input class="form-control input btn btn-success " type="submit" value="save" name="submit_post">
                             <div style="color: red" class="m-2">

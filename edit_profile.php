@@ -132,7 +132,7 @@ if (isset($_POST['submit_edit'])) {
 
                         <li class="list-group-item">
                             <p>Username</p>
-                            <input class="form-control form-control-sm" type="text" name="username" placeholder="username" value="<?php echo $showuser['username'] ?>">
+                            <input class="form-control form-control-sm" type="text" name="username" placeholder="username" value="<?php echo $showuser['username'] ?>" required>
                         </li>
 
                         <li class="list-group-item">
@@ -141,7 +141,7 @@ if (isset($_POST['submit_edit'])) {
                         </li>
                         <li class="list-group-item">
                             <p>First Name</p>
-                            <input class="form-control form-control-sm" type="text" name="fname" placeholder="first name" value="<?php echo $showuser['fname'] ?>">
+                            <input class="form-control form-control-sm" type="text" name="fname" placeholder="first name" value="<?php echo $showuser['fname'] ?>" >
                         </li>
                         <li class="list-group-item">
                             <p>Last Name</p>
@@ -150,7 +150,7 @@ if (isset($_POST['submit_edit'])) {
 
                         <li class="list-group-item">
                             <p>E-Mail</p>
-                            <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" value="<?php echo $showuser['email'] ?>">
+                            <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" value="<?php echo $showuser['email'] ?>" required>
                         </li>
 
                         <li class="list-group-item">
@@ -162,12 +162,16 @@ if (isset($_POST['submit_edit'])) {
                     </ul>
 
                         <br>
+                            <a href="edit_pass.php" class="btn btn-info">Change Password</a>
                         <br>
+                            <br>
+
                         <a href="user.php?username=<?php echo $_SESSION['username']; ?>" class="btn btn-danger card-link">Cancel</a> || <input type="submit" name="submit_edit" value="Save" class="btn btn-success">
                         </form>
                     </div>
                 </div>
             </center>
         </div>
+
     </div>
 </div>

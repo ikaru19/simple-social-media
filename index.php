@@ -94,10 +94,10 @@ if (isset($_POST['submit_post'])) {
                                 <p>
                                     <?php echo $show['status_content']; ?>
                                 </p>
-
-                                <input class="form-control input-sm" type="text" name="status" placeholder="What's On Your Mind ?">
+                                <textarea class="form-control input-sm" rows="3" name="status" placeholder="What's On Your Mind ?" style="resize: none;" required ></textarea>
+<!--                                <input class="form-control input-sm" type="text" name="status" placeholder="What's On Your Mind ?" required>-->
                                 <br>
-                                <input class="form-control input btn btn-info " type="submit" value="Post" name="submit_post">
+                                <input class="form-control input btn btn-info " type="submit" value="Post" name="submit_post" >
                             </div>
                             <!-- /.post -->
                         </form>
@@ -109,8 +109,10 @@ if (isset($_POST['submit_post'])) {
 
             <?php
             $id = $_SESSION['id'];
-            $sql = "select s.* , f.f_id , u.* from status s join friend f on f.friend_id = s.user_id join user u on u.id = f.friend_id where f.user_id = $id or s.user_id = $id GROUP BY s.s_id ORDER BY s.status_time DESC
-";
+//            $sql = "select s.* , f.f_id , u.* from status s join friend f on f.friend_id = s.user_id join user u on u.id = f.friend_id where f.user_id = $id or s.user_id = $id GROUP BY s.s_id ORDER BY s.status_time DESC
+//";
+            $sql = "SELECT s.* , f.f_id , u.* from friend f right join user u on f.friend_id = u.id join status s on s.user_id = u.id where f.user_id = $id or u.id = $id GROUP BY s.s_id ORDER BY s.status_time DESC ";
+
             $result = mysqli_query($db,$sql);
             $num_rows = mysqli_num_rows($result);
             if ($num_rows > 0) {
@@ -121,7 +123,14 @@ if (isset($_POST['submit_post'])) {
                             <!-- Post -->
                             <div class="post">
                                 <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="img/<?php echo $show['picture']?>" alt="user image">
+                                    <?php
+                                        if ($show['picture']!=null){
+                                            ?>
+                                            <img class="img-circle img-bordered-sm" src="img/<?php echo $show['picture']?>" alt="user image">
+                                    <?php
+                                        }
+                                    ?>
+
                                     <span class="username">
 
                            <a href="user.php?username=<?php echo $show['username']; ?>" style="font-size: 1.5em;"><?php echo $show['username']; ?> </a>

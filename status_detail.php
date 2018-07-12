@@ -94,11 +94,18 @@ if (isset($_POST['submit_comment'])) {
                                     <!-- Post -->
                                     <div class="post">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="img/<?php echo $show['picture']?>" alt="user image">
-                                            <span class="username">
-                           <a href="user.php?username=<?php echo $show['username']; ?>"><?php echo $show['username']; ?> </a>
+                                            <?php
+                                            if ($show['picture']!=null){
+                                                ?>
+                                                <img class="img-circle img-bordered-sm" src="img/<?php echo $show['picture']?>" alt="user image">
+                                                <span class="username">
+                                               <a href="user.php?username=<?php echo $show['username']; ?>"><?php echo $show['username']; ?> </a>
 
-                        </span>
+                                               </span>
+                                                <?php
+                                            }
+                                            ?>
+
 
                                         </div>
                                         <!-- /.user-block -->
@@ -108,12 +115,10 @@ if (isset($_POST['submit_comment'])) {
                                         <ul class="list-inline">
                                             </li>
                                             <li class="pull-right">
-                                                <a href="status_detail.php?s_id=<?php echo $show['s_id']; ?>"
-                                                   class="link-black text-sm"><i
-                                                        class="fa fa-comments-o margin-r-5"></i> Comments List</a></li>
-                                        </ul>
 
-                                        <input class="form-control input-sm" type="text" placeholder="Type a comment" name="comment">
+                                        </ul>
+                                        <textarea class="form-control input-sm" rows="4" placeholder="Type a comment" name="comment" style="resize: none;" required ></textarea>
+<!--                                        <input class="form-control input-sm" type="text" placeholder="Type a comment" name="comment" required>-->
                                         <br>
                                         <input class="form-control input-sm btn btn-info" type="submit" value="Comment" name="submit_comment" >
                                     </div>

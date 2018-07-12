@@ -127,7 +127,7 @@ if (isset($_POST['submit_edit'])) {
 
                                 <li class="list-group-item">
                                     <p>Username</p>
-                                    <input class="form-control form-control-sm" type="text" name="username" placeholder="username" value="<?php echo $showuser['username'] ?>">
+                                    <input class="form-control form-control-sm" type="text" name="username" placeholder="username" value="<?php echo $showuser['username'] ?>" required >
                                 </li>
                                 <li class="list-group-item">
                                     <p>Picture</p>
@@ -136,16 +136,16 @@ if (isset($_POST['submit_edit'])) {
 
                                 <li class="list-group-item">
                                     <p>First Name</p>
-                                    <input class="form-control form-control-sm" type="text" name="fname" placeholder="first name" value="<?php echo $showuser['fname'] ?>">
+                                    <input class="form-control form-control-sm" type="text" name="fname" placeholder="first name" value="<?php echo $showuser['fname'] ?>" required >
                                 </li>
                                 <li class="list-group-item">
                                     <p>Last Name</p>
-                                    <input class="form-control form-control-sm" type="text" name="lname" placeholder="last name" value="<?php echo $showuser['lname'] ?>">
+                                    <input class="form-control form-control-sm" type="text" name="lname" placeholder="last name" value="<?php echo $showuser['lname'] ?>" required >
                                 </li>
 
                                 <li class="list-group-item">
                                     <p>E-Mail</p>
-                                    <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" value="<?php echo $showuser['email'] ?>">
+                                    <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" value="<?php echo $showuser['email'] ?>" required >
                                 </li>
 
                                 <li class="list-group-item">

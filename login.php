@@ -92,15 +92,15 @@
                 				<td>Password</td>
                 			</tr>
                 			<tr>
-                				<td><input class="form-control form-control-sm" type="text" name="username" placeholder="username"></td>
-                				<td><input class="form-control form-control-sm" type="password" name="password" placeholder="password"></td>
+                				<td><input class="form-control form-control-sm" type="text" name="username" placeholder="username" required></td>
+                				<td><input class="form-control form-control-sm" type="password" name="password" placeholder="password" required></td>
                 				<td>	<input type="submit" name="submit_login" value="Login" class="btn btn-success"></td>
 
 
                 			</tr>
 
                 		</table>
-                        <div style = "font-size:11px; color:#cc2643; margin-top:10px">
+                        <div style = "font-size:11px; color:#cc080c; margin-top:10px;  text-shadow: 0 0 1.5px #ffffff;">
                             <?php
                             if(isset($_GET['pesan'])){
                                 if($_GET['pesan'] == "gagal"){
@@ -158,20 +158,20 @@
         <div class="free bolder">It's free and always will be</div>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="formbox">
-            <input type="text" class="inputbody in1" placeholder="First name" name="fname">
-            <input type="text" class="inputbody in1 fr" placeholder="Last name" name="lname">
+            <input type="text" class="inputbody in1" placeholder="First name" name="fname" required>
+            <input type="text" class="inputbody in1 fr" placeholder="Last name" name="lname" required>
             </div>
             <div class="formbox">
-            <input type="text" class="inputbody in2" placeholder="Username" name="username">
+            <input type="text" class="inputbody in2" placeholder="Username" name="username" required>
             </div>
             <div class="formbox">
-                <input type="text" class="inputbody in2" placeholder="Email" name="email">
+                <input type="text" class="inputbody in2" placeholder="Email" name="email" required>
             </div>
             <div class="formbox">
-            <input type="password" class="inputbody in2" placeholder="New password" name="password">
+            <input type="password" class="inputbody in2" placeholder="New password" name="password" required>
             </div>
             <div class="formbox">
-                <input type="submit" name="submit_reg" value="sign up" class="signbut bolder">
+                <input type="submit" name="submit_reg" value="sign up" class="signbut bolder" required>
              </div>
         </form>
                     <div style = "font-size:16px; color:#cc2643; margin-top:10px">
